@@ -19,9 +19,6 @@ if __name__ == '__main__':
     p = os.path.join(os.path.dirname(__file__), "report", "测试报告.html")
     p1 = os.path.join(os.path.dirname(__file__), "report", now, "测试报告.html")
     shutil.copy(p1, p)
-    #sendEmail()
+    sendEmail()
 
-    # shutil.copy("E:\\pytest\\apiFrame\\report\\2020-12-01_13-39\\assets\\style.css","E:\\pytest\\apiFrame\\report\\style.css")
-    # os.system("pytest  --alluredir report/" + now)
-    # path_report = path + '\html'
-    # os.system("allure generate " + path + " -o " + path_report + " --clean")
+
