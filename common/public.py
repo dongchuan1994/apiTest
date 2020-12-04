@@ -29,7 +29,7 @@ def sendEmail():
                        host='smtp.qq.com',
                        port='465')
 
-    body = "测试报告:http://10.4.2.240:8080/job/apiFrame/ws/report/%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A.html"
+    body = "测试报告:http://10.4.2.240:8080/job/apiTest/ws/report/%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A.html"
 
     yag.send(to=['1134417759@qq.com'],
              subject='测试报告',
