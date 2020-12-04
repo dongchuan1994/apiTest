@@ -11,6 +11,10 @@ objYaml = OperationExcel()
 @pytest.mark.parametrize('datas', objYaml.readExcel('testdata.xlsx'))
 def test_001(datas):
     test_001.__doc__ = "登录功能测试：" + datas["Description"]
+    datas['Data'] = json.loads(datas['Data'])
+    if datas['Data']['token'] == "{token}":
+        with open(filePath("data", "usertoken.txt"), "r") as f:
+            datas['Data']['token'] = f.read()
     print("请求数据：" + '\n' + str(datas['Data']) + '\n')
     r = obj.post(
         url = datas["Url"],

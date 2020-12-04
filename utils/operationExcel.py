@@ -17,10 +17,6 @@ class OperationExcel:
             dict_i = dict(zip(sheet1_content.row_values(0),sheet1_content.row_values(i)))
             if dict_i['IsRun'] == 'y':
                 dict_i['Url'] = getUrl() + dict_i['Url']
-                dict_i['Data'] = json.loads(dict_i['Data'])
-                if dict_i['Data']['token'] == "{token}":
-                    with open(filePath("data", "usertoken.txt"), "r") as f:
-                        dict_i['Data']['token'] = f.read()
                 result.append(dict_i)
         return  result
 
