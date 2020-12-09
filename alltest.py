@@ -1,4 +1,5 @@
-import pytest,time,os,shutil
+import pytest,time,os,sys,shutil
+sys.path.append("C:\\Users\\DONGCHUAN\\AppData\\Roaming\\Python\\Python37\\site-packages")
 from common.public import filePath,mkdir,sendEmail
 
 
