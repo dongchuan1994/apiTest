@@ -22,7 +22,7 @@ if __name__ == '__main__':
     p = os.path.join(os.path.dirname(__file__), "report", "测试报告.html")
     p1 = os.path.join(os.path.dirname(__file__), "report", now, "测试报告.html")
     shutil.copy(p1, p)
-    sendEmail()
+    # sendEmail()
 
 
 
