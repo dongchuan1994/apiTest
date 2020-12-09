@@ -1,4 +1,4 @@
-import os,sys,json
+import os,sys,json,base64
 sys.path.append("C:\\Users\\DONGCHUAN\\AppData\\Roaming\\Python\\Python37\\site-packages")
 import yagmail
 
@@ -23,6 +23,11 @@ def getUrl():
         data = json.loads(f.read())
         return data['url']+':'+data['port']
 
+def getOrgCode():
+    with open(filePath("config","config.json"),'r') as f:
+        data = json.loads(f.read())
+        return data['orgcode']
+
 def sendEmail():
     yag = yagmail.SMTP(user='873555954@qq.com',
                        password='wauswyjovrklbbeh',
@@ -34,3 +39,9 @@ def sendEmail():
     yag.send(to=['1134417759@qq.com'],
              subject='测试报告',
              contents=[body])
+
+def imgBase(filename):
+    with open(filePath("data",filename), 'rb') as f:
+        base64_data = base64.b64encode(f.read())
+        s = base64_data.decode()
+    return  'data:image/jpeg;base64,' + s
