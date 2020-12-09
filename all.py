@@ -5,4 +5,4 @@ sys.path.append(p)
 from common.public import filePath,mkdir,sendEmail
 
 if __name__ == '__main__':
-    pytest.main(['--alluredir', 'allure-results'])
+    pytest.main(['-s','--alluredir', 'allure-results/allure'])
